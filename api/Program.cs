@@ -28,13 +28,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors(options =>
+/*app.UseCors(options =>
 {
     options.SetIsOriginAllowed(origin => true)
         .AllowAnyMethod()
         .AllowAnyHeader()
         .AllowCredentials();
-});
+});*/
+app.UseSecurityHeaders();
 
 app.UseSpaStaticFiles();
 app.UseSpa(conf => { conf.Options.SourcePath = frontEndRelativePath; });
